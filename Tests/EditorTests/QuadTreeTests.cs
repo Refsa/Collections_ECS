@@ -8,7 +8,7 @@ using Unity.Collections;
 using Unity.PerformanceTesting;
 using Unity.Mathematics;
 
-namespace Tests
+namespace Refsa.Collections.Tests
 {
     public class QuadTreeTests
     {
@@ -33,7 +33,7 @@ namespace Tests
                 }
             }
 
-            QuadTree quadTree = new QuadTree(Allocator.Persistent);
+            NativeQuadTree quadTree = new NativeQuadTree(Allocator.Persistent);
             var quadTreeNode = new QuadTreeNode();
 
             Measure
@@ -78,7 +78,7 @@ namespace Tests
                 }
             }
 
-            QuadTree quadTree = new QuadTree(Allocator.Persistent);
+            NativeQuadTree quadTree = new NativeQuadTree(Allocator.Persistent);
             var quadTreeNode = new QuadTreeNode();
 
             for (int i = 0; i < testMortonCodes.Length; i++)
@@ -123,7 +123,7 @@ namespace Tests
                 }
             }
 
-            QuadTree quadTree = new QuadTree(Allocator.Persistent, 100000);
+            NativeQuadTree quadTree = new NativeQuadTree(Allocator.Persistent, 100000);
             var quadTreeNode = new QuadTreeNode();
 
             for (int i = 0; i < testMortonCodes.Length; i++)
@@ -131,7 +131,7 @@ namespace Tests
                 quadTreeNode.Index = testMortonCodes[i];
                 var status = quadTree.Insert(testMortonCodes[i], quadTreeNode);
 
-                Assert.AreEqual(QuadTree.QuadTreeStatus.OK, status);
+                Assert.AreEqual(NativeQuadTree.QuadTreeStatus.OK, status);
             }
 
             quadTree.Dispose();
@@ -157,7 +157,7 @@ namespace Tests
                 }
             }
 
-            QuadTree quadTree = new QuadTree(Allocator.Persistent, 100000);
+            NativeQuadTree quadTree = new NativeQuadTree(Allocator.Persistent, 100000);
             var quadTreeNode = new QuadTreeNode();
 
             for (int i = 0; i < testMortonCodes.Length; i++)
@@ -169,7 +169,7 @@ namespace Tests
             for (int i = 0; i < testMortonCodes.Length; i++)
             {
                 var status = quadTree.Query(testMortonCodes[i], out var data);
-                Assert.AreEqual(QuadTree.QuadTreeStatus.OK, status);
+                Assert.AreEqual(NativeQuadTree.QuadTreeStatus.OK, status);
                 Assert.AreEqual(testMortonCodes[i], data.Index);
             }
 

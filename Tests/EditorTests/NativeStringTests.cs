@@ -6,7 +6,7 @@ using UnityEngine.TestTools;
 using Refsa.Collections.String;
 using Unity.PerformanceTesting;
 
-namespace Tests
+namespace Refsa.Collections.Tests
 {
     public class NativeStringTests
     {

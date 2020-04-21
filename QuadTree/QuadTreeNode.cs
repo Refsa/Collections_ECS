@@ -5,12 +5,15 @@ using Unity.Mathematics;
 
 namespace Refsa.Collections.QuadTree
 {
-    public struct QuadTreeNode
+    public unsafe struct QuadTreeNode
     {
-        public Entity entity;
         public int Index;
-    
+        public int Count;
+
         public static QuadTreeNode Null =>
-            new QuadTreeNode{Index = -1};
+            new QuadTreeNode{Index = -1, Count = -1};
+        
+        public static QuadTreeNode Empty =>
+            new QuadTreeNode{Index = 0, Count = 0};
     }
 }

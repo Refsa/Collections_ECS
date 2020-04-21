@@ -6,7 +6,7 @@ using Unity.PerformanceTesting;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace Tests
+namespace Refsa.Collections.Tests
 {
     public class NativeCharArrayTests
     {
