@@ -1,7 +1,7 @@
 {
     "name": "com.refsa.collections",
-    "version": "0.0.1",
-    "displayName": "Collections",
+    "version": "0.0.2",
+    "displayName": "Refsa-Collections",
     "description": "Utilities and collections for Unity DOTS and Burst",
     "unity": "2019.3",
     "unityRelease": "2f1",
